@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.6.1.min.js"></script>
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   
+</head>
+<body>
+    <h1>Jquery Get</h1>
+    <p id="demo1">My Name is <b>Harh Tripathi</b></p><br><br>
+    <p>Name : <input type="text" id="Text1"/></p>
+    <button id="btn1">Show Text</button>
+    <button id="btn2">Show Html</button>
+    <button id="btn3">Show Value</button>
+    <br><br>
+    <h1>Jquery Set</h1>
+    <p id="demo2">My name is Ravindra</p>
+    <p id="demo3">Jquery!<p>
+    <p>Name : <input type="text" id="demo4"></p>
+    <button id="btn4">Set Text</button>
+    <button id="btn5">Set Html</button>
+    <button id="btn6">Set Value</button>
+    <br><br>
+    <h1>Jquery Add</h1>
+    <br>
+    <p id="demo4"> My name is </p>
+    <ol>
+        <li>list1</li>
+        <li>list2</li>
+        <li>list3</li>
+    </ol>
+    <button id="btn7">Append list and text</button>
+</body>
+<!-- Jquery Get -->
+<script>
+    $(document).ready(function () {
+        $("#btn1").click(function () {
+            alert("Text: " + $("#demo1").text());
+        });
+        $("#btn2").click(function () {
+            alert("HTML: " + $("#demo1").html());
+        });
+        $("#btn3").click(function () {
+            alert("VALUE: " + $("#Text1").val());
+        });
+    });
+</script>
+<!-- Jquery Set -->
+<script>
+    $(document).ready(function () {
+       $("#btn4").click(function(){
+        $("#demo2").text("Hello Harsh");
+       });
+       $("#btn5").click(function(){
+        $("#demo3").html("<b>Hello I am HTML element</b>");
+       });
+       $("#btn6").click(function(){
+        $("#demo4").val("Harsh Tripathi");
+       });
+    });
+</script>
+<!-- Jquery Add -->
+<script>
+    $(document).ready(function () {
+       $("#btn7").click(function(){
+        $("#demo4").prepend("<b>append text</b>");
+       });
+       $("#btn7").click(function(){
+        $("ol").append("<li>Append List</li>");
+       });
+    });
+</script>
+</html>

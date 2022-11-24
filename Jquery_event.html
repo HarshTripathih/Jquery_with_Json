@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.6.1.min.js"></script>
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+        td,
+        th,
+        tr,
+        table {
+            border: 2px solid black;
+            width: 20%;
+            height: vh;
+        }
+
+        #btn1 {
+            background-color: aqua;
+            font-size: 20px;
+        }
+
+        #btn2 {
+            background-color: aqua;
+            font-size: 20px;
+        }
+
+        #btn3 {
+            background-color: aqua;
+            font-size: 20px;
+        }
+
+        #btn4 {
+            background-color: aqua;
+            font-size: 20px;
+        }
+
+        input[type=text] {
+            width: 81.5%;
+            padding: 20px;
+            font-size: 20px;
+        }
+
+        #panel,
+        #flip {
+            padding: 5px;
+            text-align: center;
+            background-color: #e5eecc;
+            border: solid 1px #c3c3c3;
+            cursor:pointer;
+        }
+
+        #panel {
+            padding: 50px;
+            display: none;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $("#btn").click(function () {
+                $("table").hide();
+            });
+            $("#btn").mouseenter(function () {
+                $("table").css('background-color', 'blue');
+            });
+            $("#btn").mouseleave(function () {
+                $("table").css('background-color', 'purple');
+            });
+        });
+
+
+        $(document).ready(function () {
+            $("#dblclick").dblclick(function () {
+                $("p").css({ 'font-size': '40px', 'color': 'red' });
+            });
+        });
+
+        $(document).ready(function () {
+            $("#flip").click(function () {
+                $("#panel").slideDown(5000).css({'font-size':'30px','color':'brown'})  // This is called Chaining in jquery
+            });
+            $("#flip").dblclick(function () {
+                $("#panel").slideUp("slow",function(){
+                    alert("This Slide Down Box is Hidden Now");
+                });
+            });
+            $("#stop").click(function () {
+                $("#panel").stop();
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th>Enter Value 1</th>
+            <td colspan="3"><input type="text" id="value1"></td>
+        </tr>
+        <tr>
+            <th>Enter Value 2</th>
+            <td colspan="3"><input type="text" id="value2"></td>
+        </tr>
+        <tr>
+            <td><button id="btn1" onclick="sum()">SUM</button></td>
+            <td><button id="btn2" onclick="sub()">SUB</button></td>
+            <td><button id="btn3" onclick="mul()">MUL</button></td>
+            <td><button id="btn4" onclick="div()">DIV</button></td>
+        </tr>
+    </table>
+    <button id="btn">Hide table</button></br>
+    <h1>This is Onclick() Event ,mouseenter() event and mouseleave() event</h1></br></br>
+
+    <p id="demo">My name is Harh Tripathi I study at Lovely Professional university</p>
+    <button id="dblclick">Click me Double !</button></br></br></br>
+
+    <h1> Using Jquery Effect : Hide/Show , Slide, Stop(), Callback, Chaining</h1>
+    </br></br>
+    <button id="stop">Use me To stop the scroll down or Scroll up</button>
+    <br><br>
+    <div id="flip">Click Me for Slide down the Content </div>
+    <div id="panel">Hello I am A full stack Developer</div>
+    
+
+</body>
+
+</html>
