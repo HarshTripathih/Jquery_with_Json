@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.6.1.min.js"></script>
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var StudentJsonString = '[{"Name":"Harsh Tripathi","GraduationYear":2024,"Branch":"CSE","Minor":"Full-Stack"},{"Name":"Nikhil","GraduationYear":2024,"Branch":"CSE","Minor":"Cyber"},{"Name":"Shivam","GraduationYear":2024,"Branch":"CSE","Minor":"DataScience"}]'
+            var Jsonobj = JSON.parse(StudentJsonString);
+            var result ="";
+            $.each(Jsonobj, function(i,item){
+                result += "Name =" + item.Name + '<br/>';
+                result += "Graduation Year =" + item.GraduationYear + '<br/>';
+                result += "Branch =" + item.Branch + '<br/>'; 
+                result += "Minor =" + item.Minor + '<br/><br/>';
+            });
+            $("#resultDiv").html(result);
+        });
+    </script>
+</head>
+
+<body>
+    <div id="resultDiv"></div>
+</body>
+
+</html>

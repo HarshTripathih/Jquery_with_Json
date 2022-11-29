@@ -21,21 +21,25 @@
         #btn1 {
             background-color: aqua;
             font-size: 20px;
+            width: 100%;
         }
 
         #btn2 {
             background-color: aqua;
             font-size: 20px;
+            width: 100%;
         }
 
         #btn3 {
             background-color: aqua;
             font-size: 20px;
+            width: 100%;
         }
 
         #btn4 {
             background-color: aqua;
             font-size: 20px;
+            width: 100%;
         }
 
         input[type=text] {
@@ -50,7 +54,7 @@
             text-align: center;
             background-color: #e5eecc;
             border: solid 1px #c3c3c3;
-            cursor:pointer;
+            cursor: pointer;
         }
 
         #panel {
@@ -80,15 +84,43 @@
 
         $(document).ready(function () {
             $("#flip").click(function () {
-                $("#panel").slideDown(5000).css({'font-size':'30px','color':'brown'})  // This is called Chaining in jquery
+                $("#panel").slideDown(5000).css({ 'font-size': '30px', 'color': 'brown' })  // This is called Chaining in jquery
             });
             $("#flip").dblclick(function () {
-                $("#panel").slideUp("slow",function(){
+                $("#panel").slideUp("slow", function () {
                     alert("This Slide Down Box is Hidden Now");
                 });
             });
             $("#stop").click(function () {
                 $("#panel").stop();
+            });
+
+            $(document).ready(function () {
+
+                $("#btn1").click(function () {
+                    var num1 = $("#num1").val();
+                    var num2 = $("#num2").val();
+                    var sum = parseInt(num1) + parseInt(num2);
+                    document.getElementById("btn1").innerHTML = sum;
+                });
+                $("#btn2").click(function () {
+                    var num1 = $("#num1").val();
+                    var num2 = $("#num2").val();
+                    var sub = parseInt(num1) - parseInt(num2);
+                    document.getElementById("btn2").innerHTML = sub;
+                });
+                $("#btn3").click(function () {
+                    var num1 = $("#num1").val();
+                    var num2 = $("#num2").val();
+                    var mul = parseInt(num1) * parseInt(num2);
+                    document.getElementById("btn3").innerHTML = mul;
+                });
+                $("#btn4").click(function () {
+                    var num1 = $("#num1").val();
+                    var num2 = $("#num2").val();
+                    var div = parseInt(num1) / parseInt(num2);
+                    document.getElementById("btn4").innerHTML = div;
+                });
             });
 
         });
@@ -99,17 +131,17 @@
     <table>
         <tr>
             <th>Enter Value 1</th>
-            <td colspan="3"><input type="text" id="value1"></td>
+            <td colspan="3"><input type="text" id="num1"></td>
         </tr>
         <tr>
             <th>Enter Value 2</th>
-            <td colspan="3"><input type="text" id="value2"></td>
+            <td colspan="3"><input type="text" id="num2"></td>
         </tr>
         <tr>
-            <td><button id="btn1" onclick="sum()">SUM</button></td>
-            <td><button id="btn2" onclick="sub()">SUB</button></td>
-            <td><button id="btn3" onclick="mul()">MUL</button></td>
-            <td><button id="btn4" onclick="div()">DIV</button></td>
+            <td><button id="btn1">SUM</button></td>
+            <td><button id="btn3">MUL</button></td>
+            <td><button id="btn2">SUB</button></td>
+            <td><button id="btn4">DIV</button></td>
         </tr>
     </table>
     <button id="btn">Hide table</button></br>
@@ -124,8 +156,9 @@
     <br><br>
     <div id="flip">Click Me for Slide down the Content </div>
     <div id="panel">Hello I am A full stack Developer</div>
-    
+
 
 </body>
+
 
 </html>
